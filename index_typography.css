@@ -1,0 +1,69 @@
+/* Custom added typographic css. First step of future refactoring. */
+.references p, .references span {
+    text-align: left;
+    color: #474747;
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 0.125rem;
+    width: calc(100% + 0.125rem);
+    font-size: 1em;
+    line-height: 1.875;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.references span {
+    font-style: regular;
+}
+
+.references p a {
+    text-decoration: underline;
+}
+
+.references p a:hover {
+    text-decoration: none;
+}
+
+.references p span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+}
+
+
+/* Section headers */
+
+.section-header {
+    text-align: left;
+    text-transform: uppercase;
+    color: #FF4D00;
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 0.125rem;
+    width: calc(100% + 0.125rem);
+    font-size: 1.375em;
+    line-height: 2.5;
+    font-weight: 700;
+}
+
+.fyi-paragraph{
+    text-align: left;
+}
+
+.footer-text, .fyi-paragraph {
+    color: #474747;
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 0.125rem;
+    width: calc(100% + 0.125rem);
+    font-size: 1em;
+    line-height: 1.875;
+    font-weight: 400;
+}
+
+.footer-text a {
+    text-decoration: underline;
+}
+
+.footer-text a:hover {
+    text-decoration: none;
+}
+
+.footer-text span.p:nth-child(n + 2) {
+    margin-top: 1rem;
+}
