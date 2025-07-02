@@ -1,5 +1,90 @@
+/* Typography default*/  
+
+
+/* Section headers */
+.section-header {
+    text-align: left;
+    text-transform: uppercase;
+    color: #FF4D00;
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 0.125rem;
+    width: calc(100% + 0.125rem);
+    font-size: 1.375em;
+    line-height: 2.5;
+    font-weight: 700;
+}
+
+@media (max-width: 736px) {
+    .section-header {
+        font-size: 1.375em;
+        line-height: 1.25;
+        letter-spacing: 0.109375rem;
+        width: calc(100% + 0.109375rem);
+    }
+
+    .section-header:not(:first-child) {
+        margin-top: 1.03125rem !important;
+    }
+
+    .section-header:not(:last-child) {
+        margin-bottom: 1.03125rem !important;
+    }
+ } 
+
+
+/* Text block styles */
+.text-block {
+  text-align: left;
+  color: #474747;
+  font-family: 'Inconsolata', monospace;
+  letter-spacing: 0.125rem;
+  width: calc(100% + 0.125rem);
+}
+
+.text-block a {
+  text-decoration: underline;
+}
+.text-block a:hover {
+  text-decoration: none;
+}
+.text-block span.p:nth-child(n + 2) {
+  margin-top: 1rem;
+}
+
+.text-block--x-large { font-size: 3.75em; line-height: 1.25; font-weight: 700; }
+.text-block--large { font-size: 2.125em; line-height: 1.25; font-weight: 700; }
+.text-block--medium { font-size: 1.375em; line-height: 2.5; font-weight: 700; }
+.text-block--normal { font-size: 1em; line-height: 1.875; font-weight: 400; }
+
+
+
+@media (max-width: 980px) {
+    html {
+        font-size: 12pt;
+    }
+}
+
+@media (max-width: 736px) {
+    .text-block--x-large { font-size: 2.75em; line-height: 1.875; letter-spacing: 0.109375rem; width: calc(100% + 0.109375rem); }
+    .text-block--large { font-size: 2.125em; line-height: 1.25; letter-spacing: 0.109375rem; width: calc(100% + 0.109375rem); }
+    .text-block--medium { font-size: 1em; line-height: 1.875; letter-spacing: 0.109375rem; width: calc(100% + 0.109375rem); }
+    .text-block--normal { font-size: 1em; line-height: 1.875; letter-spacing: 0.109375rem; width: calc(100% + 0.109375rem); }
+
+
+    .text-block--large:not(:first-child) {
+        margin-top: 1.125rem !important;
+    }
+
+    .text-block--large:not(:last-child) {
+        margin-bottom: 1.125rem !important;
+    }
+}
+/* End of refactored text block style */
+
+
 /* Custom added typographic css. First step of future refactoring. */
-.references p, .references span {
+.references p, 
+.references span {
     text-align: left;
     color: #474747;
     font-family: 'Inconsolata', monospace;
@@ -11,8 +96,20 @@
     font-style: italic;
 }
 
-.references span {
-    font-style: regular;
+.references span.name,
+.references span.role {
+    font-size: 0.875em;
+    line-height: 1.375;
+}
+
+.references span.name {
+    font-weight: 600;
+    font-style: normal;
+}
+
+.references span.role {
+    font-weight: 400;
+    font-style: normal;
 }
 
 .references p a {
@@ -27,24 +124,44 @@
     margin-top: 1rem;
 }
 
+@media (max-width: 736px) {
 
-/* Section headers */
-
-.section-header {
-    text-align: left;
-    text-transform: uppercase;
-    color: #FF4D00;
-    font-family: 'Inconsolata', monospace;
-    letter-spacing: 0.125rem;
-    width: calc(100% + 0.125rem);
-    font-size: 1.375em;
-    line-height: 2.5;
-    font-weight: 700;
+    #main .references {
+        --alignment: right;
+        --flex-alignment: center;
+        --indent-left: 1;
+        --indent-right: 1;
+        --margin-left: auto;
+        --margin-right: auto;
+    }
 }
 
-.fyi-paragraph{
-    text-align: left;
+
+
+/* Dividers */
+.divider {
+    align-items: center;
+    border: 0;
+    display: flex;
+    justify-content: var(--flex-alignment);
+    min-height: 1rem;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    justify-content: flex-start;
 }
+
+.divider:before {
+    content: '';
+    width: 3rem;
+    background-color: #474747;
+    height: 1px;
+    border-radius: 0px;
+}
+
+
+
+/* Footer */
 
 .footer-text, .fyi-paragraph {
     color: #474747;
@@ -56,14 +173,16 @@
     font-weight: 400;
 }
 
-.footer-text a {
+.fyi-paragraph{
+    text-align: left;
+    font-style: regular;
+}
+
+.fyi-paragraph a {
     text-decoration: underline;
 }
 
-.footer-text a:hover {
+.fyi-paragraph a:hover {
+    color:#FF4D00 !important;	
     text-decoration: none;
-}
-
-.footer-text span.p:nth-child(n + 2) {
-    margin-top: 1rem;
 }

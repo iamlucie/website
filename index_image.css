@@ -1,0 +1,142 @@
+.image {
+    display: block;
+    line-height: 0;
+    max-width: 100%;
+    position: relative;
+}
+
+.image .frame {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    vertical-align: top;
+    width: 100%;
+}
+
+.image .frame img {
+    border-radius: 0 !important;
+    max-width: 100%;
+    vertical-align: top;
+    width: inherit;
+}
+
+.image.full .frame {
+    display: block;
+}
+
+.image.full:first-child .frame {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.image.full:last-child .frame {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+#image02 img,
+#image04 img,
+#image05 img,
+#image06 img {
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    width: 100% !important;
+}
+
+#image02 .frame img,
+#image04 .frame img,
+#image05 .frame img,
+#image06 .frame img {
+    transition: none;
+}
+
+#image02 .frame {
+    width: 72rem;
+    height: 25.375rem;
+    transition: none;
+}
+
+#image06 .frame {
+    width: 100vw;
+    /* height: 18rem; */
+    transition: none;
+}
+
+#image04 .frame {
+    width: 100vw;
+    /* height: 18rem; */
+    transition: none;
+}
+
+#image05 .frame {
+    width: 100vw;
+    transition: none;
+}
+
+
+
+
+@media (max-width: 736px) {
+
+    #image02 .frame {
+        width: 72rem;
+        height: 25rem !important;
+    }
+
+    #image02 img,
+    #image04 img,
+    #image05 img,
+    #image06 img {
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center;
+        width: 100% !important;
+    }
+
+    #image04 .frame,
+    #image05 .frame,
+    #image06 .frame  {
+        height: 15rem !important;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    #main > .inner {
+        --spacing: 0rem;
+    }
+
+    #image02 .frame {
+        height: 20rem !important;
+    }
+
+    #image04 .frame,
+    #image05 .frame,
+    #image06 .frame  {
+        height: 12rem !important;
+    }
+}
+
+
+@media (max-width: 360px) {
+    #main > .inner {
+        --padding-horizontal: 1.5rem;
+        --padding-vertical: 1.5rem;
+        --spacing: 0rem;
+    }
+
+    #image02 .frame {
+        height: 17.5rem !important;
+    }
+
+    #image04 .frame,
+    #image05 .frame,
+    #image06 .frame  {
+        height: 10.5rem !important;
+    }
+}
+    
