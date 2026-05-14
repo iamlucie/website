@@ -36,69 +36,51 @@
     border-bottom-right-radius: inherit;
 }
 
-#image02 img,
+
 #image04 img,
 #image05 img,
-#image06 img {
+#videoContainer1 img,
+#videoContainer2 img {
     height: 100% !important;
     object-fit: cover;
     object-position: center;
     width: 100% !important;
 }
 
-#image02 .frame img,
+
 #image04 .frame img,
 #image05 .frame img,
-#image06 .frame img {
+#videoContainer2 .frame img {
     transition: none;
 }
 
-#image02 .frame {
-    width: 72rem;
-    height: 25.375rem;
-    transition: none;
-}
 
-#image06 .frame {
+#image04 .frame,
+#image05 .frame,
+#videoContainer1 .frame,
+#videoContainer2 .frame {
     width: 100vw;
-    /* height: 18rem; */
+    height: 18rem;
     transition: none;
 }
 
-#image04 .frame {
+
+/* Ensuring video plays in proper width and height */
+
+#videoContainer1 .frame,
+#videoContainer2 .frame {
     width: 100vw;
-    /* height: 18rem; */
+    height: 18rem;
     transition: none;
 }
-
-#image05 .frame {
-    width: 100vw;
-    transition: none;
-}
-
-
 
 
 @media (max-width: 736px) {
 
-    #image02 .frame {
-        width: 72rem;
-        height: 25rem !important;
-    }
-
-    #image02 img,
-    #image04 img,
-    #image05 img,
-    #image06 img {
-        height: 100% !important;
-        object-fit: cover;
-        object-position: center;
-        width: 100% !important;
-    }
-
     #image04 .frame,
     #image05 .frame,
-    #image06 .frame  {
+    #videoContainer1 .frame,
+    #videoContainer2 .frame {
         height: 15rem !important;
     }
 }
@@ -110,13 +92,10 @@
         --spacing: 0rem;
     }
 
-    #image02 .frame {
-        height: 20rem !important;
-    }
-
     #image04 .frame,
     #image05 .frame,
-    #image06 .frame  {
+    #videoContainer1 .frame,
+    #videoContainer2 .frame {
         height: 12rem !important;
     }
 }
@@ -129,14 +108,13 @@
         --spacing: 0rem;
     }
 
-    #image02 .frame {
-        height: 17.5rem !important;
-    }
-
     #image04 .frame,
     #image05 .frame,
-    #image06 .frame  {
+    #videoContainer1 .frame,
+    #videoContainer2 .frame {
         height: 10.5rem !important;
     }
 }
-    
+
+
+
