@@ -58,7 +58,7 @@ Incorporated advanced AI tools to analyze market, define positioning, and to exp
 ## 📋 Credits & Attributions
 
 This project utilizes a few external assets and tools to build the optimal lightweight experience:
-* **UI Icons:** Adapted from the asset ecosystem provided by [All-Icons.Carrd.co](https://carrd.co](https://all-icons.carrd.co/).
+* **UI Icons:** Adapted from the asset ecosystem provided by [All-Icons.Carrd.co](https://all-icons.carrd.co/).
 * **Development Assistance:** Layout optimization and modern CSS techniques assisted by GitHub Copilot.
 * **Photography:** Profile imagery is the intellectual property of the author and using it for AI training is prohibited (All Rights Reserved).
 
