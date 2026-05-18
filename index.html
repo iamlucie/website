@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="index_buttons.css" />
         <link rel="stylesheet" href="index_image.css" />
         <link rel="stylesheet" href="about_section.css">
+        <link rel="stylesheet" href="faq_section.css">
 
             <style>
                 body {
@@ -244,6 +245,73 @@
                     </section> -->
                     <!-- End About/Transition Section -->
 
+<!-- FAQ Section (matching "Expertise" layout) -->
+ <!-- 
+<h2 class="section-header">Frequently Asked Questions</h2>
+<div id="faq" class="container columns">
+  <div class="wrapper">
+    <div class="inner">
+      <div>
+
+        <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">What is your design process?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+            <p class="text-block text-block--normal">My design process is iterative and user-centered, starting with research, ideation, prototyping, and continuous feedback.</p>
+        </div>
+        <hr class="divider">
+        </div>
+
+        <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">What tools do you use?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+            <p class="text-block text-block--normal">My design process is iterative and user-centered, starting with research, ideation, prototyping, and continuous feedback.</p>
+        </div>
+        <hr class="divider">
+        </div>
+
+        <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Do you work remotely?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+            <p class="text-block text-block--normal">My design process is iterative and user-centered, starting with research, ideation, prototyping, and continuous feedback.</p>
+        </div>
+        <hr class="divider">
+        </div>
+
+        <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Are you available for consulting?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+            <p class="text-block text-block--normal">My design process is iterative and user-centered, starting with research, ideation, prototyping, and continuous feedback.</p>
+        </div>
+        <hr class="divider">
+        </div>
+
+        <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Yet another question?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+            <p class="text-block text-block--normal">My design process is iterative and user-centered, starting with research, ideation, prototyping, and continuous feedback.</p>
+        </div>
+        <hr class="divider">
+        </div>
+        
+    </div>
+  </div>
+</div> -->
+
                     <p class="footer-text">This website does not track anything and anyone.</p>
                     <p class="footer-text">©2025 Lucie Ost</p>
                 </div>
@@ -296,5 +364,25 @@ frame.innerHTML = `
   <script src="https://www.youtube.com/iframe_api"></script>
   <!-- Script to handle loading animation -->
   <script src="assets/scripts/script.js"></script>
+
+ <!-- Script to handle FAQs -->
+ <script>
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    // Collapse all others (accordion behavior)
+    document.querySelectorAll('.faq-question').forEach(function(otherBtn) {
+      if (otherBtn !== btn) {
+        otherBtn.setAttribute('aria-expanded', 'false');
+        otherBtn.parentElement.querySelector('.faq-answer').hidden = true;
+      }
+    });
+    // Toggle this one
+    btn.setAttribute('aria-expanded', !expanded);
+    btn.parentElement.querySelector('.faq-answer').hidden = expanded;
+  });
+});
+</script>
+ <!-- Script to handle FAQs -->
     </body>
 </html>
