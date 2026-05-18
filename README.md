@@ -48,9 +48,10 @@ Incorporated advanced AI tools to analyze market, define positioning, and to exp
 ---
 
 ## 💡 Key Learnings
-* Maintaining a "Vanilla" stack (HTML/CSS) is highly effective for personal portfolios.
-* AI pair-programming (Copilot/Claude) significantly reduces time spent on CSS layout debugging.
-* Keeping naming conventions consistent between public and private sections is vital for long-term scalability.
+* Taking the longer path and learning AI-coding tools sequentially from VS Code over Cursor to Claude Code has the benefit of being able to see the differences and legacy DNA of the older tools.
+* Since the project is not built from scratch, it is best to try Claude Code on non-code problems first. Trying to refactor and overhaul the coding workflow simmultaneously would make me slower initially while I want to ship an update in a predictable time and quality.
+* AI pair-programming (Copilot) significantly reduces time spent on CSS layout debugging.
+* Keeping naming conventions consistent between public and private sections is vital for long-term scalability and future design system experiments.
 
 ---
-*Created by [Your Name/Lucie]*
+*Created by Lucie*
