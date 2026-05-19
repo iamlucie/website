@@ -1,6 +1,11 @@
 /* FAQ Toggle Styles */
+#faq > .wrapper > .inner {
+  width: 100%;
+}
+
 .faq-item {
   margin-bottom: 0;
+  border-bottom: 1px solid #474747;
 }
 
 .faq-question {
@@ -23,6 +28,14 @@
   font-size: 1.25em;
   letter-spacing: 0.08em;
   font-family: 'Inconsolata', monospace;
+}
+
+.faq-question[aria-expanded="true"] {
+  padding-bottom: 1rem;
+}
+
+.faq-question[aria-expanded="true"] .faq-question-text {
+  font-weight: 700;
 }
 
 .faq-toggle-icon {

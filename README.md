@@ -40,10 +40,11 @@ This phase focused on migrating from "no-code" to a custom-built environment to 
 ### Phase 2: AI-Assisted Optimization (2026)
 Incorporated advanced AI tools to analyze market, define positioning, and to experiment in code with new sections and video content.
 * **Workflow Integration:** Started using **Cursor** (job market trends spotting) and continued using **VS Code** for code updates.
-* **Refactoring:** Cleaned up the HTML structure to bring closer portfolio and webpage CSS classes.
-* **New Features:** * Integrated video content.
-    * Started exploring an **About** or **FAQ** section idea.
-    * Analyzed the codebase with Copilot in VS Code and saved the public website architecture documentation in .github/copilot-instructions.md
+* **Refactoring:** Cleaned up the HTML structure to bring closer portfolio and webpage CSS classes. Resolved undesired project image cropping — switched from fixed height with `object-fit: cover` to natural aspect ratio across all breakpoints.
+* **New Features:**
+    * Integrated video content.
+    * Shipped the **FAQ section** as an accordion with real content covering role, process, AI approach, location, and availability.
+    * Analyzed the codebase with Copilot in VS Code and saved the public website architecture documentation in `.github/copilot-instructions.md`
 
 ---
 

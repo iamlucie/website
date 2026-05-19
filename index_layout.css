@@ -299,7 +299,8 @@ body.is-instant:after {
     #expertise > .wrapper > .inner,
     #references > .wrapper > .inner,
     #project-pic-right > .wrapper > .inner,
-    #project-pic-left > .wrapper > .inner{
+    #project-pic-left > .wrapper > .inner,
+    #faq > .wrapper > .inner {
         --gutters: 2.5rem;
         --padding-horizontal: 0rem;
         --padding-vertical: 0rem;
@@ -508,13 +509,15 @@ body.is-instant:after {
     #expertise:not(:last-child),
     #references:not(:last-child),
     #project-pic-left:not(:last-child),
-    #project-pic-right:not(:last-child){
+    #project-pic-right:not(:last-child),
+    #faq:not(:last-child){
         margin-bottom: 5rem !important;
     }
 
     #expertise:not(:first-child),
     #references:not(:first-child),
-    #project-pic-left:not(:first-child) {
+    #project-pic-left:not(:first-child),
+    #faq:not(:first-child) {
         margin-top: 1.25rem !important;
     }
 
@@ -534,7 +537,8 @@ body.is-instant:after {
     /* Grouped columns > .wrapper > .inner settings for column */
     #expertise.columns > .wrapper > .inner,
     #references.columns > .wrapper > .inner,
-    #project-pic-right.columns > .wrapper > .inner {
+    #project-pic-right.columns > .wrapper > .inner,
+    #faq.columns > .wrapper > .inner {
         flex-direction: column !important;
         flex-wrap: nowrap !important;
     }
@@ -550,7 +554,8 @@ body.is-instant:after {
 
     #expertise.columns > .wrapper > .inner > span,
     #references.columns > .wrapper > .inner > span,
-    #project-pic-right.columns > .wrapper > .inner > span {
+    #project-pic-right.columns > .wrapper > .inner > span,
+    #faq.columns > .wrapper > .inner > span {
         height: 0;
         margin-top: calc(var(--gutters) * -1);
         pointer-events: none;
@@ -566,7 +571,8 @@ body.is-instant:after {
 
     #expertise.columns > .wrapper > .inner > *:first-child,
     #references.columns > .wrapper > .inner > *:first-child,
-    #project-pic-right.columns > .wrapper > .inner > *:first-child {
+    #project-pic-right.columns > .wrapper > .inner > *:first-child,
+    #faq.columns > .wrapper > .inner > *:first-child {
         margin-left: 0 !important;
         padding-top: 0 !important;
     }
@@ -579,7 +585,8 @@ body.is-instant:after {
 
     #expertise.columns > .wrapper > .inner > *,
     #references.columns > .wrapper > .inner > *,
-    #project-pic-right.columns > .wrapper > .inner > * {
+    #project-pic-right.columns > .wrapper > .inner > *,
+    #faq.columns > .wrapper > .inner > * {
         padding: calc(var(--gutters) * 0.5) 0 !important;
     }
 
@@ -591,7 +598,8 @@ body.is-instant:after {
 
     #expertise.columns > .wrapper > .inner > *:last-child,
     #references.columns > .wrapper > .inner > *:last-child,
-    #project-pic-right.columns > .wrapper > .inner > *:last-child {
+    #project-pic-right.columns > .wrapper > .inner > *:last-child,
+    #faq.columns > .wrapper > .inner > *:last-child {
         padding-bottom: 0 !important;
     }
 
@@ -677,7 +685,8 @@ body.is-instant:after {
     #expertise > .wrapper > .inner > :nth-child(3),
     #references > .wrapper > .inner > :nth-child(1),
     #references > .wrapper > .inner > :nth-child(2),
-    #references > .wrapper > .inner > :nth-child(3){
+    #references > .wrapper > .inner > :nth-child(3),
+    #faq > .wrapper > .inner > * {
         min-height: 100% !important;
         width: 100% !important;
     }
@@ -708,7 +717,8 @@ body.is-instant:after {
     #expertise > .wrapper > .inner,
     #references > .wrapper > .inner,
     #project-pic-left > .wrapper > .inner,
-    #project-pic-right > .wrapper > .inner{
+    #project-pic-right > .wrapper > .inner,
+    #faq > .wrapper > .inner{
         --gutters: 2.5rem;
         --padding-horizontal: 0rem;
         --padding-vertical: 0rem;
