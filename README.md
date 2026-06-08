@@ -42,8 +42,9 @@ Incorporated advanced AI tools to analyze market, define positioning, and to exp
 * **Workflow Integration:** Started using **Cursor** (job market trends spotting) and continued using **VS Code** for code updates.
 * **Refactoring:** Cleaned up the HTML structure to bring closer portfolio and webpage CSS classes. Resolved undesired project image cropping — switched from fixed height with `object-fit: cover` to natural aspect ratio across all breakpoints.
 * **New Features:**
-    * Integrated video content.
+    * Integrated video content with **watch intro pills** indicating playable videos on project cards.
     * Shipped the **FAQ section** as an accordion with real content covering role, process, AI approach, location, and availability.
+    * Optimized profile picture: Made it significantly smaller (56px circular avatar) to mitigate low-quality photo and reduce visual prominence, shifting content focus to work and expertise instead.
     * Analyzed the codebase with Copilot in VS Code and saved the public website architecture documentation in `.github/copilot-instructions.md`
 
 ---
@@ -53,6 +54,16 @@ Incorporated advanced AI tools to analyze market, define positioning, and to exp
 * Since the project is not built from scratch, it is best to try Claude Code on non-code problems first. Trying to refactor and overhaul the coding workflow simmultaneously would make me slower initially while I want to ship an update in a predictable time and quality.
 * AI pair-programming (Copilot) significantly reduces time spent on CSS layout debugging.
 * Keeping naming conventions consistent between public and private sections is vital for long-term scalability and future design system experiments.
+
+---
+
+## 🐛 Known Issues
+
+The following bugs are documented and scheduled for fixes:
+
+1. **Video Pill Border Radius Animation** — The watch intro pills on project cards exhibit unwanted border-radius animation on hover. The default and hover states should have identical rounded corners without transitioning between them.
+
+2. **Play/Pause Icon Styling Mismatch** — The play icon (default state) and pause icon (hover state) have different rounded corners, creating a visual inconsistency when hovering over video pills.
 
 ---
 

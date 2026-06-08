@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Profile Photo Options — Comparison</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?display=swap&family=Inconsolata:ital,wght@0,400;0,700;1,400;1,700" rel="stylesheet" type="text/css"/>
+    <style>
+        /* === Reset & base (from your site) === */
+        *, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inconsolata', monospace;
+            color: #474747;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            padding: 3rem 2rem;
+        }
+
+        /* === Page layout === */
+        .page-title {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.125rem;
+            color: #FF4D00;
+            margin-bottom: 3rem;
+        }
+
+        .option-section {
+            max-width: 70rem;
+            margin: 0 auto 4rem;
+        }
+
+        .option-label {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.125rem;
+            color: #FF4D00;
+            margin-bottom: 0.5rem;
+        }
+
+        .option-description {
+            font-size: 0.875rem;
+            color: #888;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* === Shared card styles === */
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 3rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .card h1 {
+            font-size: 3.75em;
+            line-height: 1.25;
+            font-weight: 700;
+            letter-spacing: 0.125rem;
+            color: #474747;
+        }
+
+        .card h2 {
+            font-size: 1em;
+            line-height: 1.875;
+            font-weight: 400;
+            letter-spacing: 0.125rem;
+            color: #474747;
+        }
+
+        .buttons {
+            list-style: none;
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .buttons a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid #474747;
+            border-radius: 2rem;
+            color: #474747;
+            text-decoration: none;
+            font-family: 'Inconsolata', monospace;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .buttons a:hover {
+            background: #474747;
+            color: #fff;
+        }
+
+        /* === Circular avatar (shared) === */
+        .avatar-circle {
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           OPTION A — Small circular avatar in a column
+           ============================================ */
+        .option-a .card-inner {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .option-a .text-col {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .option-a .photo-col {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option-a .avatar-circle {
+            width: 140px;
+            height: 140px;
+        }
+
+        /* ================================================
+           OPTION B — Tiny inline avatar next to the name
+           ================================================ */
+        .option-b .name-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .option-b .avatar-circle {
+            width: 56px;
+            height: 56px;
+        }
+
+        /* === Responsive === */
+        @media (max-width: 736px) {
+            body { padding: 2rem 1rem; }
+
+            .card { padding: 2rem 1.5rem; }
+            .card h1 { font-size: 2.5em; }
+
+            .option-a .card-inner {
+                flex-direction: column-reverse;
+                gap: 2rem;
+                text-align: center;
+            }
+            .option-a .avatar-circle {
+                width: 100px;
+                height: 100px;
+            }
+            .option-a .buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <p class="page-title">Profile Photo — Compare Approaches</p>
+
+    <!-- ==================== OPTION A ==================== -->
+    <div class="option-section">
+        <p class="option-label">Option A — Small circle in a side column</p>
+        <p class="option-description">
+            Keeps the two-column layout but shrinks the image to a 140px circle.
+            The text column dominates; the photo is a subtle identity marker.
+        </p>
+
+        <div class="card option-a">
+            <div class="card-inner">
+                <div class="text-col">
+                    <h1>Lucie Ost</h1>
+                    <h2>Principal product designer and experience lead based in Dresden, Germany.</h2>
+                    <ul class="buttons">
+                        <li><a href="#">CV</a></li>
+                        <li><a href="#">Writing</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="photo-col">
+                    <img class="avatar-circle"
+                         src="assets/images/profile_image.jpg"
+                         alt="Lucie (she/her)" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== OPTION B ==================== -->
+    <div class="option-section">
+        <p class="option-label">Option B — Tiny inline avatar beside the name</p>
+        <p class="option-description">
+            Removes the second column entirely. A 56px circle sits next to the name,
+            like LinkedIn or a byline. Maximum space for your work below.
+        </p>
+
+        <div class="card option-b">
+            <div class="name-row">
+                <img class="avatar-circle"
+                     src="assets/images/profile_image.jpg"
+                     alt="Lucie (she/her)" />
+                <h1>Lucie Ost</h1>
+            </div>
+            <h2>Principal product designer and experience lead based in Dresden, Germany.</h2>
+            <ul class="buttons">
+                <li><a href="#">CV</a></li>
+                <li><a href="#">Writing</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

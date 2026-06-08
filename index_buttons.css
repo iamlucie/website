@@ -110,47 +110,74 @@
 }
 
 .play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.play-button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  border-left: 28px solid #fff;
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  filter: drop-shadow(0 0 4px #222) drop-shadow(0 0 2px #000);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, background-color 0.3s ease;
 }
 
 .play-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
+/* Play triangle — geometrically off-centre so it's OPTICALLY centred in the circle */
+.play-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 4px), -50%);
+    width: 0;
+    height: 0;
+    border-left: 24px solid #fff;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    transition: opacity 0.15s;
+}
 
-.play-button {
+/* Pause bars — perfectly centred, hidden unless .is-playing */
+.play-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22px;
+    height: 26px;
+    background-image: linear-gradient(
+        to right,
+        #fff 0 7px,
+        transparent 7px 15px,
+        #fff 15px 22px
+    );
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
+    transition: opacity 0.15s;
 }
 
-#videoContainer1:hover .play-button,
-#videoContainer1 .frame:hover .play-button,
-#videoContainer2:hover .play-button,
-#videoContainer2 .frame:hover .play-button {
+/* Toggle icons based on container state */
+#videoContainer1.is-playing .play-button::before,
+#videoContainer2.is-playing .play-button::before { opacity: 0; }
+
+#videoContainer1.is-playing .play-button::after,
+#videoContainer2.is-playing .play-button::after { opacity: 1; }
+
+/* Visibility: paused → always, playing → on hover only */
+#videoContainer1.is-paused .play-button,
+#videoContainer2.is-paused .play-button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#videoContainer1.is-playing:hover .play-button,
+#videoContainer2.is-playing:hover .play-button {
     opacity: 1;
     pointer-events: auto;
 }
@@ -184,4 +211,101 @@
 
 .play-button {
   z-index: 2;
+}
+
+
+/* ── Watch intro badge ─────────────────────────────────────────────────────
+   Always visible on video thumbnails; turns orange on hover.
+   Sits above the overlay (z-index 4) so it's never obscured.
+──────────────────────────────────────────────────────────────────────────── */
+#videoContainer1 .frame,
+#videoContainer2 .frame {
+    position: relative;
+}
+
+.watch-badge {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    z-index: 4;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    background: rgba(0, 0, 0, 0.62);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #fff;
+
+    font-family: 'Inconsolata', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+
+    padding: 0.3rem 0.65rem 0.3rem 0.5rem;
+    border: 0;
+    border-radius: 4px;
+
+    opacity: 0.9;
+    cursor: pointer;
+    transition: opacity 0.2s, background-color 0.2s, color 0.2s, border-radius 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.watch-badge::before {
+    border-left-color: #fff;
+    transition: border-left-color 0.2s;
+}
+
+/* Hover */
+.watch-badge:hover,
+.watch-badge:focus-visible {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(71, 71, 71);
+    border-radius: 12px;
+    outline: none;
+}
+
+.watch-badge:hover::before,
+.watch-badge:focus-visible::before {
+    border-left-color: rgb(71, 71, 71);
+}
+
+/* Active (click) */
+.watch-badge:active {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(71, 71, 71);
+    border-radius: 12px;
+}
+
+.watch-badge:active::before {
+    border-left-color: rgb(71, 71, 71);
+}
+
+.watch-badge::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 7px solid #fff;
+    border-top: 4.5px solid transparent;
+    border-bottom: 4.5px solid transparent;
+    flex-shrink: 0;
+}
+
+#videoContainer1:hover .watch-badge,
+#videoContainer2:hover .watch-badge {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(71, 71, 71);
+    border-radius: 12px;
+}
+
+#videoContainer1:hover .watch-badge::before,
+#videoContainer2:hover .watch-badge::before {
+    border-left-color: rgb(71, 71, 71);
 }

@@ -726,3 +726,18 @@ body.is-instant:after {
     }
 
 }
+
+/* Profile avatar styling for Option B layout */
+.name-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}

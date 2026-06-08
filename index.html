@@ -172,6 +172,7 @@
                                         <span class="frame">
                                             <img src="assets/images/client_oracle.png?v=e0f67f7f" alt="Click to play video"/>
                                             <div class="play-button" onclick="playVideo('videoContainer1', '6JFxJEPy-6g', 'assets/images/client_oracle.png')"></div>
+                                            <button type="button" class="watch-badge" onclick="playVideo('videoContainer1', '6JFxJEPy-6g', 'assets/images/client_oracle.png')" aria-label="Watch intro video">Watch intro</button>
                                         </span>
                                     </div>
                                 </div>
@@ -216,6 +217,7 @@
                                         <span class="frame">
                                             <img src="assets/images/client_kontent.jpg?v=e0f67f7f" alt="Click to play video"/>
                                             <div class="play-button" onclick="playVideo('videoContainer2', 'R8f0Vahr7j0', 'assets/images/client_kontent.jpg')"></div>
+                                            <button type="button" class="watch-badge" onclick="playVideo('videoContainer2', 'R8f0Vahr7j0', 'assets/images/client_kontent.jpg')" aria-label="Watch intro video">Watch intro</button>
                                         </span>
                                     </div>
                                 </div>
@@ -343,7 +345,10 @@
           autoplay: 1,
           rel: 0,
           modestbranding: 1,
-          controls: 1
+          controls: 0,
+          disablekb: 1,
+          iv_load_policy: 3,
+          playsinline: 1
         },
         events: {
           'onStateChange': onPlayerStateChange
@@ -353,18 +358,42 @@
   
     // Restore the original image when video ends
     function onPlayerStateChange(event) {
+      const player = event.target;
+      const iframe = player.getIframe();
+      const container = iframe && iframe.closest('.image');
+      if (!container) return;
+      const frame = container.querySelector('.frame') || container;
+      const placeholder = container.dataset.placeholder;
+      const containerId = container.id;
+      const videoId = player.getVideoData().video_id;
+
       if (event.data === YT.PlayerState.ENDED) {
-        const iframe = event.target.getIframe();
-// find the nearest .image container (your markup uses class "image")
-    const container = iframe.closest('.image');
-    const placeholder = container && container.dataset.placeholder;
-    const containerId = container && container.id;
-    const frame = container.querySelector('.frame') || container;
-  
-frame.innerHTML = `
-  <img src="${placeholder}" alt="Click to play video" />
-  <div class="play-button" onclick="playVideo('${containerId}', '${event.target.getVideoData().video_id}', '${placeholder}')"></div>
-`;
+        container.classList.remove('is-paused', 'is-playing');
+        frame.innerHTML = `
+          <img src="${placeholder}" alt="Click to play video" />
+          <div class="play-button" onclick="playVideo('${containerId}', '${videoId}', '${placeholder}')"></div>
+          <button type="button" class="watch-badge" onclick="playVideo('${containerId}', '${videoId}', '${placeholder}')" aria-label="Watch intro video">Watch intro</button>
+        `;
+        return;
+      }
+
+      if (!frame.querySelector('.play-button')) {
+        const btn = document.createElement('div');
+        btn.className = 'play-button';
+        btn.addEventListener('click', () => {
+          const s = player.getPlayerState();
+          if (s === YT.PlayerState.PLAYING) player.pauseVideo();
+          else player.playVideo();
+        });
+        frame.appendChild(btn);
+      }
+
+      if (event.data === YT.PlayerState.PAUSED) {
+        container.classList.add('is-paused');
+        container.classList.remove('is-playing');
+      } else if (event.data === YT.PlayerState.PLAYING) {
+        container.classList.add('is-playing');
+        container.classList.remove('is-paused');
       }
     }
   </script>
