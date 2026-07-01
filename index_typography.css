@@ -1,4 +1,4 @@
-/* Typography default*/  
+/* Typography default*/
 
 
 /* Section headers */
@@ -6,20 +6,19 @@
     text-align: left;
     text-transform: uppercase;
     color: #FF4D00;
-    font-family: 'Inconsolata', monospace;
-    letter-spacing: 0.125rem;
-    width: calc(100% + 0.125rem);
-    font-size: 1.375em;
-    line-height: 2.5;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.18em;
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 700;
+    margin-bottom: 1rem !important;
 }
 
 @media (max-width: 736px) {
     .section-header {
-        font-size: 1.375em;
-        line-height: 1.25;
-        letter-spacing: 0.109375rem;
-        width: calc(100% + 0.109375rem);
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.18em;
     }
 
     .section-header:not(:first-child) {
@@ -27,18 +26,16 @@
     }
 
     .section-header:not(:last-child) {
-        margin-bottom: 1.03125rem !important;
+        margin-bottom: 0.75rem !important;
     }
- } 
+ }
 
 
 /* Text block styles */
 .text-block {
   text-align: left;
   color: #474747;
-  font-family: 'Inconsolata', monospace;
-  letter-spacing: 0.125rem;
-  width: calc(100% + 0.125rem);
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .text-block a {
@@ -51,10 +48,36 @@
   margin-top: 1rem;
 }
 
-.text-block--x-large { font-size: 3.75em; line-height: 1.25; font-weight: 700; }
-.text-block--large { font-size: 2.125em; line-height: 1.25; font-weight: 700; }
-.text-block--medium { font-size: 1.375em; line-height: 2.5; font-weight: 700; }
-.text-block--normal { font-size: 1em; line-height: 1.875; font-weight: 400; }
+.text-block--x-large { font-size: 72px; line-height: 74px; font-weight: 700; letter-spacing: -0.03em; }
+.text-block--large { font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: -0.025em; }
+.text-block--medium { font-size: 18px; line-height: 28px; font-weight: 700; }
+.text-block--normal { font-size: 15px; line-height: 24px; font-weight: 400; }
+
+/* Project/expertise meta line — date, company, role */
+h4.text-block {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    line-height: 18px;
+    color: #767676;
+}
+
+h4.text-block em {
+    font-style: normal;
+}
+
+/* Tighter vertical rhythm inside project cards */
+#project-pic-right > .wrapper > .inner,
+#project-pic-left > .wrapper > .inner {
+    --spacing: 0.625rem;
+}
+
+/* Extra breathing room before project CTA buttons */
+#project-pic-right .buttons,
+#project-pic-left .buttons {
+    margin-top: 1.5rem !important;
+}
 
 
 
@@ -65,10 +88,10 @@
 }
 
 @media (max-width: 736px) {
-    .text-block--x-large { font-size: 2.75em; line-height: 1.875; letter-spacing: 0.109375rem; width: calc(100% + 0.109375rem); }
-    .text-block--large { font-size: 2.125em; line-height: 1.25; letter-spacing: 0.109375rem; width: calc(100% + 0.109375rem); }
-    .text-block--medium { font-size: 1em; line-height: 1.875; letter-spacing: 0.109375rem; width: calc(100% + 0.109375rem); }
-    .text-block--normal { font-size: 1em; line-height: 1.875; letter-spacing: 0.109375rem; width: calc(100% + 0.109375rem); }
+    .text-block--x-large { font-size: 48px; line-height: 50px; letter-spacing: -0.02em; font-family: 'IBM Plex Sans', sans-serif; }
+    .text-block--large { font-size: 24px; line-height: 30px; letter-spacing: -0.02em; }
+    .text-block--medium { font-size: 15px; line-height: 24px; }
+    .text-block--normal { font-size: 15px; line-height: 24px; }
 
 
     .text-block--large:not(:first-child) {
@@ -83,23 +106,21 @@
 
 
 /* Custom added typographic css. First step of future refactoring. */
-.references p, 
+.references p,
 .references span {
     text-align: left;
     color: #474747;
-    font-family: 'Inconsolata', monospace;
-    letter-spacing: 0.125rem;
-    width: calc(100% + 0.125rem);
-    font-size: 1em;
-    line-height: 1.875;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    line-height: 24px;
     font-weight: 400;
     font-style: italic;
 }
 
 .references span.name,
 .references span.role {
-    font-size: 0.875em;
-    line-height: 1.375;
+    font-size: 12px;
+    line-height: 18px;
 }
 
 .references span.name {
@@ -163,13 +184,19 @@
 
 /* Footer */
 
+.footer-section {
+    margin-left: calc(var(--padding-horizontal) * -1);
+    width: calc(100% + (var(--padding-horizontal) * 2));
+    padding: 1.5rem var(--padding-horizontal) 0;
+    border-top: 1px solid #474747;
+    text-align: left;
+}
+
 .footer-text, .fyi-paragraph {
     color: #474747;
-    font-family: 'Inconsolata', monospace;
-    letter-spacing: 0.125rem;
-    width: calc(100% + 0.125rem);
-    font-size: 1em;
-    line-height: 1.875;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    line-height: 20px;
     font-weight: 400;
 }
 
@@ -183,6 +210,6 @@
 }
 
 .fyi-paragraph a:hover {
-    color:#FF4D00 !important;	
+    color:#FF4D00 !important;
     text-decoration: none;
 }

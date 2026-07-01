@@ -79,7 +79,7 @@ body:before {
     width: 100vw;
     z-index: 0;
     background-image: url('assets/images/bg.jpg?v=e0f67f7f');
-    background-position: right;
+    background-position: 69% 0%;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #FFFFFF;
@@ -225,16 +225,16 @@ body.is-instant:after {
 }
 
 #main > .inner {
-    --padding-horizontal: 4rem;
+    --padding-horizontal: 0px;
     --padding-vertical: 4rem;
     --spacing: 0rem;
-    --width: 70rem;
+    --width: 1000px;
     border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
     max-width: 100%;
     position: relative;
     width: var(--width);
     z-index: 1;
-    padding: var(--padding-vertical) var(--padding-horizontal);
+    padding: var(--padding-vertical) var(--padding-horizontal) calc(var(--padding-vertical) * 0.5);
 }
 
 #main > .inner > * {
@@ -278,7 +278,13 @@ body.is-instant:after {
     right: auto;
 }
 
-@media (max-width: 736px) {
+@media (min-width: 601px) and (max-width: 999px) {
+    #main > .inner {
+        --padding-horizontal: 44px;
+    }
+}
+
+@media (max-width: 600px) {
 
     #main {
         --alignment: center;
@@ -290,7 +296,7 @@ body.is-instant:after {
     }
 
     #main > .inner {
-        --padding-horizontal: 1rem;
+        --padding-horizontal: 22px;
         --padding-vertical: 1rem;
         --spacing: 0rem;
     }
@@ -306,7 +312,7 @@ body.is-instant:after {
         --padding-vertical: 0rem;
         --spacing: 1.25rem;
     }
- } 
+ }
 
 
 
@@ -490,19 +496,28 @@ body.is-instant:after {
     width: calc(32% + (var(--gutters) / 3));
 }
 
-#profile-card > .wrapper > .inner > :nth-child(1),
 #project-pic-right > .wrapper > .inner > :nth-child(1) {
     width: calc(55% + (var(--gutters) / 2));
 }
 
-#profile-card > .wrapper > .inner > :nth-child(2),
 #project-pic-right > .wrapper > .inner > :nth-child(2) {
     width: calc(45% + (var(--gutters) / 2));
 }
 
+#profile-card > .wrapper > .inner > :nth-child(1) {
+    width: calc(65% + (var(--gutters) / 2));
+}
+
+#profile-card > .wrapper > .inner > :nth-child(2) {
+    width: calc(35% + (var(--gutters) / 2));
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
 
-@media (max-width: 736px) {
+
+@media (max-width: 600px) {
 
     /* Grouped containers with identical settings */
     #profile-card:not(:last-child),
@@ -527,9 +542,9 @@ body.is-instant:after {
 
 
 
-    /* Grouped columns > .wrapper > .inner settings for column-reverse */
+    /* Grouped columns > .wrapper > .inner settings for column-reverse (image-first) */
     #profile-card.columns > .wrapper > .inner,
-    #project-pic-left.columns > .wrapper > .inner{
+    #project-pic-right.columns > .wrapper > .inner{
         flex-direction: column-reverse !important;
         flex-wrap: nowrap !important;
     }
@@ -537,7 +552,7 @@ body.is-instant:after {
     /* Grouped columns > .wrapper > .inner settings for column */
     #expertise.columns > .wrapper > .inner,
     #references.columns > .wrapper > .inner,
-    #project-pic-right.columns > .wrapper > .inner,
+    #project-pic-left.columns > .wrapper > .inner,
     #faq.columns > .wrapper > .inner {
         flex-direction: column !important;
         flex-wrap: nowrap !important;
@@ -545,7 +560,7 @@ body.is-instant:after {
 
     /* Grouped span hiding */
     #profile-card.columns > .wrapper > .inner > span,
-    #project-pic-left.columns > .wrapper > .inner > span{
+    #project-pic-right.columns > .wrapper > .inner > span{
         height: 0;
         margin-top: calc(var(--padding-vertical) * -2);
         pointer-events: none;
@@ -554,7 +569,7 @@ body.is-instant:after {
 
     #expertise.columns > .wrapper > .inner > span,
     #references.columns > .wrapper > .inner > span,
-    #project-pic-right.columns > .wrapper > .inner > span,
+    #project-pic-left.columns > .wrapper > .inner > span,
     #faq.columns > .wrapper > .inner > span {
         height: 0;
         margin-top: calc(var(--gutters) * -1);
@@ -564,14 +579,14 @@ body.is-instant:after {
 
     /* Grouped first-child margin and padding reset */
     #profile-card.columns > .wrapper > .inner > *:first-child,
-    #project-pic-left.columns > .wrapper > .inner > *:first-child{
+    #project-pic-right.columns > .wrapper > .inner > *:first-child{
         margin-left: 0 !important;
         padding-bottom: 0 !important;
     }
 
     #expertise.columns > .wrapper > .inner > *:first-child,
     #references.columns > .wrapper > .inner > *:first-child,
-    #project-pic-right.columns > .wrapper > .inner > *:first-child,
+    #project-pic-left.columns > .wrapper > .inner > *:first-child,
     #faq.columns > .wrapper > .inner > *:first-child {
         margin-left: 0 !important;
         padding-top: 0 !important;
@@ -579,26 +594,26 @@ body.is-instant:after {
 
     /* Grouped padding for all children */
     #profile-card.columns > .wrapper > .inner > *,
-    #project-pic-left.columns > .wrapper > .inner > *{
+    #project-pic-right.columns > .wrapper > .inner > *{
         padding: calc(var(--gutters) * 0.5) 0 !important;
     }
 
     #expertise.columns > .wrapper > .inner > *,
     #references.columns > .wrapper > .inner > *,
-    #project-pic-right.columns > .wrapper > .inner > *,
+    #project-pic-left.columns > .wrapper > .inner > *,
     #faq.columns > .wrapper > .inner > * {
         padding: calc(var(--gutters) * 0.5) 0 !important;
     }
 
     /* Grouped last-child padding reset */
     #profile-card.columns > .wrapper > .inner > *:last-child,
-    #project-pic-left.columns > .wrapper > .inner > *:last-child{
+    #project-pic-right.columns > .wrapper > .inner > *:last-child{
         padding-top: 0 !important;
     }
 
     #expertise.columns > .wrapper > .inner > *:last-child,
     #references.columns > .wrapper > .inner > *:last-child,
-    #project-pic-right.columns > .wrapper > .inner > *:last-child,
+    #project-pic-left.columns > .wrapper > .inner > *:last-child,
     #faq.columns > .wrapper > .inner > *:last-child {
         padding-bottom: 0 !important;
     }

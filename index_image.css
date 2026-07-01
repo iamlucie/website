@@ -65,31 +65,44 @@
     transition: none;
 }
 
-/* Profile image styling and position */
-#image02 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
+/* Profile image styling and position — round, grayscale (matches portfolio) */
+#image02 .frame {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: none;
+    flex-shrink: 0;
 }
 
 #image02 .frame img {
-    height: 50%;
-    width: 50%;
+    border-radius: 50% !important;
+    filter: grayscale(1) contrast(1.15);
+    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
 }
 
-@media (max-width: 980px) {
-    #image02 .frame img {
-        height: 75%;
-        width: 75%;
+@media (max-width: 736px) {
+    #image02 .frame {
+        width: 160px;
+        height: 160px !important;
+        align-self: center;
     }
 }
 
-
 @media (max-width: 480px) {
-    #image02 .frame img {
-        height: 100%;
-        width: 100%;
+    #image02 .frame {
+        width: 140px;
+        height: 140px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    #image02 .frame {
+        width: 120px;
+        height: 120px !important;
     }
 }
 

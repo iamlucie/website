@@ -2,11 +2,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.75rem;
     justify-content: flex-start;
     padding: 0;
     cursor: default;
     letter-spacing: 0;
+}
+
+#profile-card .buttons {
+    margin-top: 1.75rem;
 }
 
 .buttons li {
@@ -19,44 +23,55 @@
     align-items: center;
     justify-content: center;
     width: auto;
-    height: 3rem;
-    line-height: 3rem;
-    padding: 0 1.5rem;
-    font-family: 'Inconsolata', monospace;
-    font-size: 1em;
-    font-weight: 400;
-    letter-spacing: 0.125rem;
-    border-radius: 0;
+    line-height: 1;
+    padding: 0.7rem 0.875rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    border: 1.5px solid #474747;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
     white-space: nowrap;
     transition: color 0.25s, background-color 0.25s, border-color 0.25s;
     color: #474747;
-    background-color: rgba(255, 231, 217, 0.5);
+    background-color: #ffffff;
 }
 
-.buttons li a svg {
-    display: block;
-    min-width: 16px;
-    width: 1em;
-    height: 100%;
-    margin-left: -0.125em;
-    margin-right: calc(0.5em + 0.125rem);
+.buttons li a i {
+    font-size: 18px;
+    line-height: 0;
+    margin-right: 0.35rem;
     flex-shrink: 0;
-    flex-grow: 0;
     pointer-events: none;
-    fill: #FF4D00;
-    transition: fill 0.25s;
+}
+
+#profile-card .buttons li:first-child a i {
+    position: relative;
+    top: -1px;
 }
 
 .buttons li a .label {
     direction: var(--site-language-direction);
     overflow: hidden;
+    letter-spacing: inherit;
+    margin-right: -0.06em;
 }
 
 .buttons li a:hover {
-    background-color: #FFE7D9 !important;
+    background-color: rgba(255, 200, 180, 0.25);
+    border-color: #FF4D00;
+    color: #FF4D00;
+}
+
+
+.buttons li a:active {
+    background-color: rgba(255, 200, 180, 0.40);
+    border-color: #e8440d;
+    color: #e8440d;
 }
 
 
@@ -64,7 +79,7 @@
 @media (max-width: 736px) {
 
     .buttons {
-        gap: 1rem;
+        gap: 0.75rem;
     }
 
     .buttons:not(:first-child) {
@@ -76,27 +91,29 @@
     }
 
     .buttons li a {
-        letter-spacing: 0.125rem;
-        padding-left: calc(0.125rem + 1.5rem);
-        font-size: 1em;
+        letter-spacing: 0.06em;
+        padding: 0.7rem 0.875rem;
+        font-size: 13px;
     }
 
-    .buttons li a svg {
-        width: 1em;
+    .buttons li a i {
+        font-size: 18px;
     }
 }
 
 
 @media (max-width: 480px) {
 
+    /* Keep buttons at their default (larger-screen) styling: row layout,
+       auto width — do not stretch them to full screen width. */
     .buttons {
-        flex-direction: column;
-        flex-wrap: nowrap;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .buttons li a {
-        max-width: 32rem;
-        width: 100%;
+        max-width: 100%;
+        width: auto;
     }
 }
 
@@ -231,20 +248,20 @@
 
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 6px;
 
     background: rgba(0, 0, 0, 0.62);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     color: #fff;
 
-    font-family: 'Inconsolata', monospace;
-    font-size: 0.6rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.12rem;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
 
-    padding: 0.3rem 0.65rem 0.3rem 0.5rem;
+    padding: 5px 10px 5px 8px;
     border: 0;
     border-radius: 4px;
 
@@ -291,9 +308,9 @@
     display: inline-block;
     width: 0;
     height: 0;
-    border-left: 7px solid #fff;
-    border-top: 4.5px solid transparent;
-    border-bottom: 4.5px solid transparent;
+    border-left: 6px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
     flex-shrink: 0;
 }
 
